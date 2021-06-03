@@ -28,7 +28,11 @@ dependencies:
   path_provider: ^1.6.24
   url_launcher: ^5.7.10
   http: ^0.12.2
-  path: 1.8.0-nullsafety.1
+  path: ^1.8.0
+# dependency_overrides:
+#   # Override path_provider to pick up fixes for FFI changes.
+#   path_provider: ^2.0.0-nullsafety.1
+
 
 
 
@@ -40,6 +44,14 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.7.0
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "dev_assets/crypt_adaptive.png"
+  adaptive_icon_background: "	#FFFAFA"
+  adaptive_icon_foreground: "dev_assets/crypt_adaptive.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

@@ -2,6 +2,7 @@ import 'package:CryptD/screens/HomePage.dart';
 import 'package:flutter/material.dart';
 // import './screens/HomePage.dart';
 import 'package:CryptD/screens/EncryptDecryptAll.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -12,17 +13,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'CruptD',
-      theme: ThemeData(        
+      theme: ThemeData(
         primarySwatch: Colors.grey,
         accentColor: Colors.white,
         canvasColor: Color(0xffafafaf),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home:EncryptDecryptAll(),
+      home: MyHomePage(),
       routes: {
-        MyHomePage.routeName: (ctx)=> MyHomePage(),
+        EncryptDecryptAll.routeName: (ctx) => EncryptDecryptAll(),
       },
     );
   }
 }
-

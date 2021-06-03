@@ -1,3 +1,4 @@
+import 'package:CryptD/screens/EncryptDecryptAll.dart';
 import 'package:flutter/material.dart';
 import '../screens/HomePage.dart';
 
@@ -57,7 +58,8 @@ class MainDrawer extends StatelessWidget {
             'QuicEncs',
             Icons.send_outlined,
             () {
-               Navigator.of(context).pushReplacementNamed(MyHomePage.routeName);
+              Navigator.of(context)
+                  .pushReplacementNamed(EncryptDecryptAll.routeName);
             },
           ),
         ],

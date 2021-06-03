@@ -11,6 +11,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:path/path.dart' as p;
 
 class EncryptDecryptAll extends StatefulWidget {
+  static const routeName = '/Encryptall';
   @override
   _EncryptDecryptAllState createState() => _EncryptDecryptAllState();
 }
@@ -102,33 +103,40 @@ class _EncryptDecryptAllState extends State<EncryptDecryptAll> {
                               print("No permission");
                               requestStoragePermission();
                             }
-                            showModalBottomSheet(
+                            showDialog(
                                 context: context,
-                                builder: (BuildContext contex) {
-                                  return Card(
-                                    child: Column(
-                                      children: [
-                                        Text(
-                                          "Encryption successfull.Check at \n $d/$fileName.aes \n Press Decrypt to retrieve original file \n Press Ok to continue",
-                                          style: TextStyle(
-                                            fontFamily: 'RobotoCondensed',
-                                            fontSize: 20,
-                                            color: Colors.black,
-                                          ),
-                                        ),
-                                        RaisedButton(
-                                          onPressed: () {
-                                            Navigator.of(context).pop();
-                                          },
-                                          child: Text(
-                                            "ok",
-                                            style: TextStyle(
-                                              fontFamily: 'RobotoCondensed',
-                                              fontSize: 18,
+                                builder: (context) {
+                                  return AlertDialog(
+                                    content: Container(
+                                      height:
+                                          MediaQuery.of(context).size.height /
+                                              2,
+                                      child: Card(
+                                        child: Column(
+                                          children: [
+                                            Text(
+                                              "Encryption successfull.Check at \n $d/$fileName.aes \n Press Decrypt to retrieve original file \n Press Ok to continue",
+                                              style: TextStyle(
+                                                fontFamily: 'RobotoCondensed',
+                                                fontSize: 20,
+                                                color: Colors.black,
+                                              ),
                                             ),
-                                          ),
+                                            RaisedButton(
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                              child: Text(
+                                                "ok",
+                                                style: TextStyle(
+                                                  fontFamily: 'RobotoCondensed',
+                                                  fontSize: 18,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
                                         ),
-                                      ],
+                                      ),
                                     ),
                                   );
                                 });
@@ -146,34 +154,41 @@ class _EncryptDecryptAllState extends State<EncryptDecryptAll> {
                               print("No permission");
                               requestStoragePermission();
                             }
-                            showModalBottomSheet(
+                            showDialog(
                                 context: context,
-                                builder: (BuildContext contex) {
-                                  return Card(
-                                    child: Column(
-                                      children: [
-                                        Text(
-                                          "Decryption successfull.Check at $d/$fileName \n Press Ok to continue",
-                                          style: TextStyle(
-                                            fontFamily: 'RobotoCondensed',
-                                            fontSize: 20,
-                                            color: Colors.black,
-                                          ),
-                                        ),
-                                        RaisedButton(
-                                          onPressed: () {
-                                            Navigator.of(context).pop();
-                                          },
-                                          child: Text(
-                                            "ok",
-                                            style: TextStyle(
-                                              fontFamily: 'RobotoCondensed',
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.bold,
+                                builder: (context) {
+                                  return AlertDialog(
+                                    content: Container(
+                                      height:
+                                          MediaQuery.of(context).size.height /
+                                              2,
+                                      child: Card(
+                                        child: Column(
+                                          children: [
+                                            Text(
+                                              "Decryption successfull.Check at $d/$fileName \n Press Ok to continue",
+                                              style: TextStyle(
+                                                fontFamily: 'RobotoCondensed',
+                                                fontSize: 20,
+                                                color: Colors.black,
+                                              ),
                                             ),
-                                          ),
+                                            RaisedButton(
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                              child: Text(
+                                                "ok",
+                                                style: TextStyle(
+                                                  fontFamily: 'RobotoCondensed',
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
                                         ),
-                                      ],
+                                      ),
                                     ),
                                   );
                                 });
